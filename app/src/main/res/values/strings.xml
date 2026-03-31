@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Packet Master</string>
+    <string name="app_name" translatable="false">Packet Master</string>
+    <string name="title_shifts">Shifts</string>
 </resources>

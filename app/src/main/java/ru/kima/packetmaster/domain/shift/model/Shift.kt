@@ -1,5 +1,8 @@
 package ru.kima.packetmaster.domain.shift.model
 
+import androidx.compose.runtime.Immutable
+
+@Immutable
 data class Shift(
     val id: Long,
     val name: String
