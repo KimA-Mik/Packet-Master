@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e76370f2652c3251c389aaeabfdfc820",
+    "identityHash": "1450ef941525ad8e104bcf58608156d1",
     "entities": [
       {
         "tableName": "shifts",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -22,7 +22,7 @@
           }
         ],
         "primaryKey": {
-          "autoGenerate": false,
+          "autoGenerate": true,
           "columnNames": [
             "id"
           ]
@@ -30,7 +30,7 @@
       },
       {
         "tableName": "orders",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `shift_id` INTEGER NOT NULL, `dry_maximum` INTEGER NOT NULL, `dry_selected` INTEGER NOT NULL, `cooled_maximum` INTEGER NOT NULL, `cooled_selected` INTEGER NOT NULL, `frozen_maximum` INTEGER NOT NULL, `frozen_selected` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `name` TEXT NOT NULL, `shift_id` INTEGER NOT NULL, `dry_maximum` INTEGER NOT NULL, `dry_selected` INTEGER NOT NULL, `cooled_maximum` INTEGER NOT NULL, `cooled_selected` INTEGER NOT NULL, `frozen_maximum` INTEGER NOT NULL, `frozen_selected` INTEGER NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -88,7 +88,7 @@
           }
         ],
         "primaryKey": {
-          "autoGenerate": false,
+          "autoGenerate": true,
           "columnNames": [
             "id"
           ]
@@ -97,7 +97,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e76370f2652c3251c389aaeabfdfc820')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1450ef941525ad8e104bcf58608156d1')"
     ]
   }
 }
