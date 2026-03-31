@@ -28,7 +28,7 @@ interface ShiftDao {
     @Insert
     suspend fun insertPacket(packetEntity: PacketEntity): Long
 
-    @Insert
+    @Update
     suspend fun updatePacket(packetEntity: PacketEntity)
 
     @Delete
