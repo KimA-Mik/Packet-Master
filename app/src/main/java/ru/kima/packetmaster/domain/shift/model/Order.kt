@@ -1,6 +1,6 @@
 package ru.kima.packetmaster.domain.shift.model
 
-data class Packet(
+data class Order(
     val id: Long,
     val name: String,
     val shiftId: Long,
@@ -22,7 +22,7 @@ data class Packet(
             cooledSelected: Int = 0,
             frozenMaximum: Int = 0,
             frozenSelected: Int = 0
-        ) = Packet(
+        ) = Order(
             id = id,
             name = name,
             shiftId = shiftId,

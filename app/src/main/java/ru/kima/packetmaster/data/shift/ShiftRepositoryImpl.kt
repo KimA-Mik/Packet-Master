@@ -8,7 +8,7 @@ import ru.kima.packetmaster.data.shift.mappers.toFullShift
 import ru.kima.packetmaster.data.shift.mappers.toPacket
 import ru.kima.packetmaster.data.shift.mappers.toShift
 import ru.kima.packetmaster.domain.shift.model.FullShift
-import ru.kima.packetmaster.domain.shift.model.Packet
+import ru.kima.packetmaster.domain.shift.model.Order
 import ru.kima.packetmaster.domain.shift.model.Shift
 import ru.kima.packetmaster.domain.shift.repositoty.ShiftRepository
 
@@ -32,19 +32,19 @@ class ShiftRepositoryImpl(
         return dao.getShifts().map { list -> list.map { it.toShift() } }
     }
 
-    override suspend fun insertPacket(packet: Packet): Long {
-        return dao.insertPacket(packet.toEntity())
+    override suspend fun insertPacket(order: Order): Long {
+        return dao.insertPacket(order.toEntity())
     }
 
-    override suspend fun updatePacket(packet: Packet) {
-        dao.updatePacket(packet.toEntity())
+    override suspend fun updatePacket(order: Order) {
+        dao.updatePacket(order.toEntity())
     }
 
-    override suspend fun deletePacket(packet: Packet) {
-        dao.deletePacket(packet.toEntity())
+    override suspend fun deletePacket(order: Order) {
+        dao.deletePacket(order.toEntity())
     }
 
-    override suspend fun getPacket(packetId: Long): Packet? {
+    override suspend fun getPacket(packetId: Long): Order? {
         return dao.getPacket(packetId)?.toPacket()
     }
 
