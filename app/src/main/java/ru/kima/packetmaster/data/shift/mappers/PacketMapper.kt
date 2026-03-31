@@ -1,9 +1,9 @@
 package ru.kima.packetmaster.data.shift.mappers
 
-import ru.kima.packetmaster.data.shift.entity.PacketEntity
+import ru.kima.packetmaster.data.shift.entity.OrderEntity
 import ru.kima.packetmaster.domain.shift.model.Order
 
-fun PacketEntity.toPacket() = Order(
+fun OrderEntity.toPacket() = Order(
     id = id,
     name = name,
     shiftId = shiftId,
@@ -15,7 +15,7 @@ fun PacketEntity.toPacket() = Order(
     frozenSelected = frozenSelected,
 )
 
-fun Order.toEntity() = PacketEntity(
+fun Order.toEntity() = OrderEntity(
     id = id,
     name = name,
     shiftId = shiftId,

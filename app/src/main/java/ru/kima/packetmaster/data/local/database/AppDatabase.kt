@@ -3,13 +3,13 @@ package ru.kima.packetmaster.data.local.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import ru.kima.packetmaster.data.shift.dao.ShiftDao
-import ru.kima.packetmaster.data.shift.entity.PacketEntity
+import ru.kima.packetmaster.data.shift.entity.OrderEntity
 import ru.kima.packetmaster.data.shift.entity.ShiftEntity
 
 @Database(
     entities = [
         ShiftEntity::class,
-        PacketEntity::class
+        OrderEntity::class
     ],
     version = 1
 )

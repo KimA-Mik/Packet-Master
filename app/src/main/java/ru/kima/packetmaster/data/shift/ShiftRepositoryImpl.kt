@@ -33,22 +33,22 @@ class ShiftRepositoryImpl(
     }
 
     override suspend fun insertPacket(order: Order): Long {
-        return dao.insertPacket(order.toEntity())
+        return dao.insertOrder(order.toEntity())
     }
 
     override suspend fun updatePacket(order: Order) {
-        dao.updatePacket(order.toEntity())
+        dao.updateOrder(order.toEntity())
     }
 
     override suspend fun deletePacket(order: Order) {
-        dao.deletePacket(order.toEntity())
+        dao.deleteOrder(order.toEntity())
     }
 
     override suspend fun getPacket(packetId: Long): Order? {
-        return dao.getPacket(packetId)?.toPacket()
+        return dao.getOrder(packetId)?.toPacket()
     }
 
     override fun getShiftWithPackets(shiftId: Long): Flow<FullShift> {
-        return dao.getShiftWithPackets(shiftId).map { it.toFullShift() }
+        return dao.getShiftWithOrders(shiftId).map { it.toFullShift() }
     }
 }

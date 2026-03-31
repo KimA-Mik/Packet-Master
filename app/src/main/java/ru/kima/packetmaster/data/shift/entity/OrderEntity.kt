@@ -4,8 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = PacketEntity.TABLE_NAME)
-data class PacketEntity(
+@Entity(tableName = OrderEntity.TABLE_NAME)
+data class OrderEntity(
     @PrimaryKey
     @ColumnInfo(name = ID_COLUMN_NAME)
     val id: Long,
@@ -19,7 +19,7 @@ data class PacketEntity(
     @ColumnInfo(name = "frozen_selected") val frozenSelected: Int,
 ) {
     companion object {
-        const val TABLE_NAME = "packets"
+        const val TABLE_NAME = "orders"
         const val ID_COLUMN_NAME = "id"
         const val PARENT_COLUMN_NAME = "shift_id"
     }

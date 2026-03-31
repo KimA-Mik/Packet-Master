@@ -7,9 +7,9 @@ import androidx.room.Query
 import androidx.room.Transaction
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-import ru.kima.packetmaster.data.shift.entity.PacketEntity
+import ru.kima.packetmaster.data.shift.entity.OrderEntity
 import ru.kima.packetmaster.data.shift.entity.ShiftEntity
-import ru.kima.packetmaster.data.shift.entity.ShiftWithPackets
+import ru.kima.packetmaster.data.shift.entity.ShiftWithOrders
 
 @Dao
 interface ShiftDao {
@@ -26,18 +26,18 @@ interface ShiftDao {
     fun getShifts(): Flow<List<ShiftEntity>>
 
     @Insert
-    suspend fun insertPacket(packetEntity: PacketEntity): Long
+    suspend fun insertOrder(orderEntity: OrderEntity): Long
 
     @Update
-    suspend fun updatePacket(packetEntity: PacketEntity)
+    suspend fun updateOrder(orderEntity: OrderEntity)
 
     @Delete
-    suspend fun deletePacket(packetEntity: PacketEntity)
+    suspend fun deleteOrder(orderEntity: OrderEntity)
 
-    @Query("SELECT * FROM ${PacketEntity.TABLE_NAME} WHERE ${PacketEntity.ID_COLUMN_NAME} = :packetId")
-    suspend fun getPacket(packetId: Long): PacketEntity?
+    @Query("SELECT * FROM ${OrderEntity.TABLE_NAME} WHERE ${OrderEntity.ID_COLUMN_NAME} = :packetId")
+    suspend fun getOrder(packetId: Long): OrderEntity?
 
     @Transaction
     @Query("SELECT * FROM ${ShiftEntity.TABLE_NAME} WHERE ${ShiftEntity.ID_COLUMN_NAME} = :shiftId")
-    fun getShiftWithPackets(shiftId: Long): Flow<ShiftWithPackets>
+    fun getShiftWithOrders(shiftId: Long): Flow<ShiftWithOrders>
 }

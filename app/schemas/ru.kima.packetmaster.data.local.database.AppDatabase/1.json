@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "7182d366b478945957f9302c4e26759d",
+    "identityHash": "e76370f2652c3251c389aaeabfdfc820",
     "entities": [
       {
         "tableName": "shifts",
@@ -29,7 +29,7 @@
         }
       },
       {
-        "tableName": "packets",
+        "tableName": "orders",
         "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `name` TEXT NOT NULL, `shift_id` INTEGER NOT NULL, `dry_maximum` INTEGER NOT NULL, `dry_selected` INTEGER NOT NULL, `cooled_maximum` INTEGER NOT NULL, `cooled_selected` INTEGER NOT NULL, `frozen_maximum` INTEGER NOT NULL, `frozen_selected` INTEGER NOT NULL, PRIMARY KEY(`id`))",
         "fields": [
           {
@@ -97,7 +97,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '7182d366b478945957f9302c4e26759d')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e76370f2652c3251c389aaeabfdfc820')"
     ]
   }
 }
